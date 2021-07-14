@@ -12,11 +12,16 @@ namespace BigSchool.Models
         {
         }
 
+        public virtual DbSet<Attendance> Attendance { get; set; }
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Course> Course { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Category>()
+                .HasMany(e => e.Course)
+                .WithRequired(e => e.Category)
+                .WillCascadeOnDelete(false);
         }
     }
 }

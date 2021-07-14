@@ -48,12 +48,12 @@ namespace BigSchool.Models
 
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage ="Email không được để trống!")]
         [Display(Name = "Email")]
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Password không được để trống!")]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
@@ -64,13 +64,13 @@ namespace BigSchool.Models
 
     public class RegisterViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Email không được để trống!")]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
 
-        [Required]
+        [Required(ErrorMessage = "Name không được để trống!")]
         [Display(Name = "Name")]
         public string Name { get; set; }
 
