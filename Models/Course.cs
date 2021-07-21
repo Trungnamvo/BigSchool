@@ -17,7 +17,7 @@
 
         public int Id { get; set; }
 
-        [Required(ErrorMessage ="Place không được để trống!")]
+        [Required]
         [StringLength(128)]
         public string LecturerId { get; set; }
 
@@ -34,7 +34,9 @@
         public string Name;
         public string LecturerName;
         public List<Category> ListCategory = new List<Category>();
-
         public virtual Category Category { get; set; }
+        public bool isLogin = false;
+        public bool isShowGoing = false;
+        public bool isShowFollow = false;
     }
 }
